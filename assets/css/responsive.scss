@@ -1,0 +1,60 @@
+//main responsive settings
+@media (max-width: $responsiveMedium) {
+    .blurb {
+        p {
+            font-size: 2rem;
+        }
+    }
+    section {
+        padding: 1.5rem 0;
+        margin-bottom: 1rem;
+    }
+    .navigation-bar {
+        .nav {
+            display: none;
+        }
+        .nav-trigger {
+            display: inline-flex;
+        }
+    }
+    .grid {
+        flex-direction: column;
+        .item {
+            //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            //margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: $responsiveNarrow) {
+    section.footer {
+        margin-top: -1rem;
+    }
+    .wrapper-inner {
+        padding: 0 2rem;
+    }
+    .navigation-bar {
+        padding-top: 3.5rem;
+    }
+    .blurb {
+        margin-top: 0;
+        p {
+            font-size: 1.6rem;
+        }
+    }
+    label.section-identifier {
+        display: none;
+    }
+    .notice {
+        margin: 0;
+        .button {
+            margin: 0 auto 1rem;
+            display: block;
+        }
+    }
+    .item {
+        .image {
+            height: 220px;
+        }
+    }
+}

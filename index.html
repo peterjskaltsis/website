@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- mady by Peter S. - updated 8.2019 -->
+<!-- The contents of this website are protected by Copyright law © Please ask me before taking the site 😇 -->
+<!-- Written in Elm ;) -->
+<html>
+
+<head>
+    <title>Peter S: Simplify & Unify</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <meta name="theme-color" content="#121212">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description"
+        content="I'm Peter S., a multi-stack developer and part-time designer, located in Australia.">
+    <meta name="keywords"
+        content="development, design, peter, peter s, web designer, website developer, website, melbourne website designer, melbourne web developer">
+    <meta name="robots" content="index,follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#121212">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#121212">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ps300300" />
+    <meta name="twitter:title" content="Peter S." />
+    <meta name="twitter:description"
+        content="I'm a multi-stack developer and part-time designer, located in Australia. Find out more." />
+    <meta name="twitter:image" content="https://peter-s.now.sh/assets/img/moon-cover.png" />
+
+    <meta property="og:title" content="Peter S." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://peter-s.now.sh" />
+    <meta property="og:image" content="https://peter-s.now.sh/assets/img/moon-cover.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+
+<body class="" id="body">
+    <div id="app"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.chaffle.min.js"></script>
+    <script>
+        Elm.Main.init({ node: document.getElementById("app") });
+
+        $(".nav-trigger").click(function () {
+            $(".nav-trigger").toggleClass("icon-active");
+            $(".dropdown").toggleClass("open");
+            $(".navigation-bar").toggleClass("open");
+        });
+        $(".brand-img-ps").click(function () {
+            $("body").toggleClass("🔆");
+            $(".note").addClass("active");
+        });
+        $(document).ready(function () {
+            $('.chaffle').chaffle({
+                speed: 10,
+                time: 60
+            });
+        });
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.indexOf('safari') != -1) {
+            if (userAgent.indexOf('chrome') > -1) {
+                //browser is chrome
+            } else if ((userAgent.indexOf('opera') > -1) || (userAgent.indexOf('opr') > -1)) {
+                //browser is opera 
+            } else {
+                $(".brand-img-ps").addClass("safari-fix-active");
+            }
+        }
+    </script>
+</body>
+
+</html>
