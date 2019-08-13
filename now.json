@@ -3,11 +3,5 @@
     "version": 2,
     "alias": [
         "peter-s"
-    ],
-    "routes": [
-        {
-            "src": "/.*",
-            "dest": "/"
-        }
     ]
 }
