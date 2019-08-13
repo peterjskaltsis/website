@@ -1,4 +1,3 @@
 # Personal Website
 
-Just my personal website, written in Elm for fun.
-
+Just my personal website, written in Elm
