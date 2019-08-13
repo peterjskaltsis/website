@@ -1,0 +1,19 @@
+{
+    "name": "peter",
+    "version": 2,
+    "alias": [
+        "peter-s"
+    ],
+    "routes": [
+        {
+            "src": "/.*",
+            "dest": "/"
+        }
+    ],
+    "builds": [
+        {
+            "src": "*.elm",
+            "use": "@now/static-build"
+        }
+    ]
+}
