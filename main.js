@@ -5252,9 +5252,11 @@ var author$project$Main$Project = F4(
 	});
 var author$project$Main$listProjects = _List_fromArray(
 	[
-		A4(author$project$Main$Project, 'MadBlock', 'Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch.', 'assets/img/madblock-final.jpg', 'https://madblock.net'),
+		A4(author$project$Main$Project, 'MadBlock', 'Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch.', 'assets/img/madblock-final.jpg', 'assets/img/madblock-final.jpg'),
 		A4(author$project$Main$Project, 'Bibelo Gifts', 'Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme.', 'assets/img/bibelo-front.png', 'https://bibelo.com.au'),
-		A4(author$project$Main$Project, 'Three Sisters', 'More information about this project will be uploaded soon...', '', '')
+		A4(author$project$Main$Project, 'Three Sisters', 'After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business.', '', 'https://threesisterscatering.com.au/'),
+		A4(author$project$Main$Project, 'Beek', 'A powerful, simple app to manage your business and change the way you send and receive payments. ', 'assets/img/beek-website.png', 'https://beek.com.au/'),
+		A4(author$project$Main$Project, 'Branding Portfolio', 'Branding and design were a highlight of my undergraduate degree, where I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. ', 'assets/img/beek-website.png', 'https://beek.com.au/')
 	]);
 var elm$html$Html$h4 = _VirtualDom_node('h4');
 var elm$html$Html$h5 = _VirtualDom_node('h5');
@@ -5491,7 +5493,7 @@ var author$project$Main$page = function (model) {
 										A2(elm$html$Html$br, _List_Nil, _List_Nil),
 										A2(elm$html$Html$br, _List_Nil, _List_Nil),
 										elm$html$Html$text('I’ve worked remotely with a multitude of clients across the globe for over '),
-										author$project$Main$strong('4'),
+										author$project$Main$strong('5'),
 										elm$html$Html$text(' years, utilising unique design to '),
 										author$project$Main$strong('forge brands'),
 										elm$html$Html$text(' and accelerate '),

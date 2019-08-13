@@ -1,11 +1,11 @@
-module Main exposing (..)
+module Main exposing (main)
 
 import Browser exposing (..)
-import Svg exposing (svg)
-import Svg.Attributes exposing (class, height, fill, viewBox, d)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html.Events as Events
+import Svg exposing (svg)
+import Svg.Attributes exposing (class, d, fill, height, viewBox)
 
 
 class =
@@ -36,9 +36,11 @@ type alias Project =
 
 
 listProjects =
-    [ Project "MadBlock" "Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch." "assets/img/madblock-final.jpg" "https://madblock.net"
+    [ Project "MadBlock" "Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch." "assets/img/madblock-final.jpg" "assets/img/madblock-final.jpg"
     , Project "Bibelo Gifts" "Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme." "assets/img/bibelo-front.png" "https://bibelo.com.au"
-    , Project "Three Sisters" "More information about this project will be uploaded soon..." "" ""
+    , Project "Three Sisters" "After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business." "" "https://threesisterscatering.com.au/"
+    , Project "Beek" "A powerful, simple app to manage your business and change the way you send and receive payments. " "assets/img/beek-website.png" "https://beek.com.au/"
+    , Project "Branding Portfolio" "Branding and design were a highlight of my undergraduate degree, where I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. " "assets/img/beek-website.png" "https://beek.com.au/"
     ]
 
 
@@ -110,7 +112,7 @@ page model =
                     , br [] []
                     , br [] []
                     , text "I’ve worked remotely with a multitude of clients across the globe for over "
-                    , strong "4"
+                    , strong "5"
                     , text " years, utilising unique design to "
                     , strong "forge brands"
                     , text " and accelerate "
@@ -178,11 +180,11 @@ primaryButton =
         path =
             "#"
     in
-        a
-            [ class "button button-primary"
-            , href path
-            ]
-            [ text "Hi, Peter.." ]
+    a
+        [ class "button button-primary"
+        , href path
+        ]
+        [ text "Hi, Peter.." ]
 
 
 viewPortfolioSection =
@@ -206,23 +208,25 @@ viewPortfolioItem { name, description, image, link } =
         isLink url =
             if url == "" then
                 [ href "#" ]
+
             else
                 [ href link, target "_blank" ]
     in
-        -- Recent work items
-        div [ class "item" ]
-            [ a ([ class "image" ] ++ projectLink)
-                [ if image == "" then
-                    h5 [] [ text "Coming Soon" ]
-                  else
-                    img [ draggable "false", src image ] []
-                ]
-            , h4 [] [ text name ]
-            , p []
-                [ text description
-                ]
-            , a projectLink [ text "View project »" ]
+    -- Recent work items
+    div [ class "item" ]
+        [ a ([ class "image" ] ++ projectLink)
+            [ if image == "" then
+                h5 [] [ text "Coming Soon" ]
+
+              else
+                img [ draggable "false", src image ] []
             ]
+        , h4 [] [ text name ]
+        , p []
+            [ text description
+            ]
+        , a projectLink [ text "View project »" ]
+        ]
 
 
 sectionNav =
