@@ -123,8 +123,8 @@ section {
 }
 
 .grid {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
   margin: 0 -1rem;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -760,7 +760,7 @@ body.🔆 .button-primary, body.🔆 a.button-primary {
     display: inline-flex;
   }
   .grid {
-    flex-direction: column;
+    grid-template-columns: 50% 50%;
   }
 }
 
@@ -789,6 +789,9 @@ body.🔆 .button-primary, body.🔆 a.button-primary {
   .notice .button {
     margin: 0 auto 1rem;
     display: block;
+  }
+  .grid {
+    grid-template-columns: auto;
   }
   .item .image {
     height: 220px;

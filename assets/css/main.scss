@@ -126,9 +126,10 @@ section {
     transition: .2s ease-in-out;
 }
 
+
 .grid {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
     margin: 0 -1rem;
 
     -webkit-user-select: none;

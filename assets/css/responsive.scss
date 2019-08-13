@@ -18,7 +18,7 @@
         }
     }
     .grid {
-        flex-direction: column;
+        grid-template-columns: 50% 50%;
         .item {
             //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             //margin-bottom: 1rem;
@@ -51,6 +51,9 @@
             margin: 0 auto 1rem;
             display: block;
         }
+    }
+    .grid {
+        grid-template-columns: auto;
     }
     .item {
         .image {

@@ -40,7 +40,7 @@ listProjects =
     , Project "Bibelo Gifts" "Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme." "assets/img/bibelo-front.png" "https://bibelo.com.au"
     , Project "Three Sisters" "After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business." "" "https://threesisterscatering.com.au/"
     , Project "Beek" "A powerful, simple app to manage your business and change the way you send and receive payments. " "assets/img/beek-website.png" "https://beek.com.au/"
-    , Project "Branding Portfolio" "Branding and design were a highlight of my undergraduate degree, where I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. " "assets/img/beek-website.png" "https://beek.com.au/"
+    , Project "Branding Portfolio" "Branding and design were a highlight of my undergraduate degree, where I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. " "assets/img/branding-front.png" "https://peter-s-nsw.peter-s1.now.sh/"
     ]
 
 
