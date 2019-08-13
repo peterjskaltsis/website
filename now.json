@@ -12,7 +12,7 @@
     ],
     "builds": [
         {
-            "src": "elm.json",
+            "src": "build.sh",
             "use": "@now/static-build"
         }
     ]
