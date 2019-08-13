@@ -2,5 +2,8 @@
     "name": "peter",
     "engines": {
         "node": ">=8.0.0 <11.0.0"
+    },
+    "scripts": {
+        "build": "elm make src/Main.elm --optimize --output=main.js"
     }
 }
