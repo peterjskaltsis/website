@@ -1,0 +1,185 @@
+/*
+    Admin Panel Page Styling
+    by Peter S. (12.18)
+*/
+
+$mainColor: #00eb86;
+$mainDarkColor: #13161b;
+
+body {
+    background-color: $mainDarkColor !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23ffffff' fill-opacity='0.01' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+#nova > div > .content > .bg-white {
+    padding-top: 1.5rem;
+}
+.relative.z-50.w-full.max-w-xs {
+    margin-left: auto;
+}
+.dropdown.relative.ml-auto.h-9.flex.items-center.dropdown-right {
+    margin-left: 2.5rem;
+}
+input[type=checkbox] {
+    -webkit-appearance: checkbox;
+}
+a {
+    font-size: 15px;
+    font-weight: 800;
+    color: $mainColor !important;
+    &:after {
+        display: none;
+    }
+}
+.btn {
+    line-height: 10px;
+}
+.logo {
+    margin: 0 auto;
+    width: 275px;
+    padding: 4rem 0 0;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: 900 !important;
+}
+.pt-header {
+    padding-top: 3.5rem;
+}
+.bg-grad-sidebar h3, .bg-grad-sidebar h3 span, .bg-grad-sidebar a {
+    color: white !important;
+}
+.sidebar-icon path {
+    fill: $mainColor !important;
+}
+.text-90 {
+    color: white;
+}
+.ct-series-a .ct-area, .ct-series-a .ct-slice-pie {
+    fill: $mainColor !important;
+}
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point {
+    stroke: $mainColor!important;
+}
+.z-40.absolute.pin.rounded-b-lg.ct-chart {
+    z-index: 1;
+}
+.card.relative.px-6.py-4 {
+    background: #202226;
+    color: white;
+    font-weight: 900;
+}
+a.dropdown-trigger.h-dropdown-trigger.flex.items-center.cursor-pointer.select-none.h-9.flex.items-center img {
+    margin: 0;
+}
+a.dropdown-trigger.h-dropdown-trigger.flex.items-center.cursor-pointer.select-none.h-9.flex.items-center svg.ml-2 {
+    width: 40px;
+}
+input.pl-search.form-control.form-input.form-input-bordered.w-full, .pl-search {
+    border: 2px solid $mainColor;
+    background: #232733;
+}
+form .text-90 {
+    color: $mainDarkColor;
+}
+path#Path-2-Copy {
+    fill: $mainColor;
+}
+.list-reset .text-90 {
+    color: $mainDarkColor;
+}
+.card {
+    .text-90 {
+        color: white;
+    }
+    p {
+        color: white;
+    }
+}
+
+/* AUTH */
+.form-input-bordered, .form-select {
+    border-width: 2px;
+    border-color: #e6e6e6;
+}
+.text-danger {
+    font-size: .85rem;
+    background: #ffdada;
+    border-radius: .3rem;
+    padding: 5px;
+}
+.text-base {
+    font-size: .85rem;
+}
+a.btn, .btn {
+    transition: .2s ease;
+    cursor: pointer;
+    color: $mainColor;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 1.15;
+    border-radius: 2rem !important;
+    border: none;
+    padding: .75rem 1.5rem .75rem 1.5rem;
+    -webkit-appearance: none;
+    outline: none;
+    display: inline-block;
+}
+a.btn-primary, .btn-primary, .btn-default {
+    background: #0be78f !important;
+    -webkit-appearance: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    line-height: 0.5;
+    text-shadow: none;
+}
+.card {
+    background: #202226;
+    border-radius: .5rem;
+}
+.table th {
+    background: #00eb86;
+    border: none !important;
+    color: #11161b;
+}
+.table td {
+    font-weight: 700;
+    font-size: 1rem;
+    border-bottom: 1px solid #222d38;
+    background: none !important;
+    color: white;
+}
+.py-3.flex.items-center.border-b.border-50 {
+    border-bottom: none;
+}
+.check svg, .checkbox svg {
+    #checkbox-on rect#b {
+        fill: $mainColor;
+    }
+    rect#Rectangle-path {
+        display: none;
+    }
+}
+.check svg g, .checkbox svg g {
+    fill: $mainDarkColor;
+}
+.checkbox:focus {
+    box-shadow: none;
+}
+.rounded-b.bg-20 {
+    background: $mainDarkColor;
+}
+.flex.border-b.border-40 {
+    border-color: #222d38;
+}
+.bg-30.flex.px-8.py-4 {
+    background: $mainDarkColor;
+}
+.dropdown.relative {
+    a.dropdown-trigger.h-dropdown-trigger.flex.items-center.cursor-pointer.select-none.bg-30.px-3.border-2.border-30.rounded {
+        background: $mainDarkColor;
+        border: none;
+        
+    }
+    a.dropdown-trigger.h-dropdown-trigger.flex.items-center.cursor-pointer.select-none.px-3 {
+        background: $mainDarkColor;
+    }
+}

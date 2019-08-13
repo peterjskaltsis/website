@@ -38,9 +38,11 @@ type alias Project =
 listProjects =
     [ Project "MadBlock" "Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch." "assets/img/madblock-final.jpg" "assets/img/madblock-final.jpg"
     , Project "Bibelo Gifts" "Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme." "assets/img/bibelo-front.png" "https://bibelo.com.au"
-    , Project "Three Sisters" "After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business." "" "https://threesisterscatering.com.au/"
-    , Project "Beek" "A powerful, simple app to manage your business and change the way you send and receive payments. " "assets/img/beek-website.png" "https://beek.com.au/"
-    , Project "Branding Portfolio" "Branding and design were a highlight of my undergraduate degree, where I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. " "assets/img/branding-front.png" "https://peter-s-nsw.peter-s1.now.sh/"
+    , Project "Three Sisters" "After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business." "assets/img/3sisters.png" "https://threesisterscatering.com.au/"
+    , Project "Beek" "A powerful, simple app to manage your business and change the way you send and receive payments. More information will be available soon, this is the highest priority project." "assets/img/beek-website.png" "https://beek.com.au/"
+    , Project "Maker Army" "Coined via a collaboration between a small team of remote developers, Maker Army is a platform built for makers to earn money from supporters, to create greater quality content and better whole creative community." "assets/img/makerarmy.png" "/maker"
+    , Project "Vivid Fund/Agency" "A private agency and fund that I founded, in order to formalise website development projects and experiment with exciting, further-reaching projects." "assets/img/vivid.png" "https://vivid.fund"
+    , Project "Branding Portfolio" "Branding & design were a highlight of my degree. I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. Let me know if you're interested in seeing my portfolio. " "assets/img/branding-front.png" "https://peter-s-nsw.peter-s1.now.sh/"
     ]
 
 
@@ -127,9 +129,9 @@ page model =
             ]
         , contactCard model
         , viewPortfolioSection
-        , section []
+        , section [ style "marginBottom" "3rem" ]
             [ div [ class "wrapper-inner", style "textAlign" "center" ]
-                [ label [ style "textTransform" "unset" ] [ text "More coming soon." ]
+                [ label [ style "textTransform" "unset" ] [ text "Site powered by ", a [ href "https://now.sh", target "_blank" ] [ text "now.sh" ], text ". ", text "Written in ", a [ href "https://elm-lang.org", target "_blank" ] [ text "Elm" ], text "." ]
                 ]
             ]
         , sectionFooter
@@ -162,7 +164,7 @@ strong word =
 
 githubLink =
     -- floating github link
-    a [ href "https://github.com/p-skal", class "github-corner", attribute "aria-label" "Check out my GitHub" ]
+    a [ href "https://github.com/p-skal", target "_blank", class "github-corner", attribute "aria-label" "Check out my GitHub" ]
         [ svg [ Svg.Attributes.width "80", Svg.Attributes.height "80", Svg.Attributes.viewBox "0 0 250 250", Svg.Attributes.style "fill: #f5deb3;color: #151513;position: absolute;top: 0;border: 0;right: 0;" ]
             [ Svg.path [ d "M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" ]
                 []
@@ -192,7 +194,7 @@ viewPortfolioSection =
         [ div [ class "wrapper-inner" ]
             [ h1 []
                 [ text "Previous work"
-                , label [ class "section-identifier" ] [ text "Starred" ]
+                , label [ class "section-identifier" ] [ text "Starred ", i [ class "fas fa-star" ] [] ]
                 ]
             , List.map viewPortfolioItem listProjects
                 |> div [ class "grid" ]
@@ -259,8 +261,9 @@ sectionFooter =
     section [ class "footer" ]
         [ div [ class "wrapper-inner" ]
             [ ul [ class "nav" ]
-                [ li [] [ a [ href "https://twitter.com/ps300300" ] [ i [ class "fab fa-twitter" ] [] ] ]
-                , li [] [ a [ href "https://medium.com/@p.skal" ] [ i [ class "fab fa-medium-m" ] [] ] ]
+                [ li [] [ a [ href "https://twitter.com/ps300300", target "_blank" ] [ i [ class "fab fa-twitter" ] [] ] ]
+                , li [] [ a [ href "https://medium.com/@p.skal", target "_blank" ] [ i [ class "fab fa-medium-m" ] [] ] ]
+                , li [] [ a [ href "https://linkedin.com/in/peter-skaltsis-1a05b3111", target "_blank" ] [ i [ class "fab fa-linkedin" ] [] ] ]
                 ]
             ]
         ]

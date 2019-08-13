@@ -16,7 +16,7 @@
     letter-spacing: 1px;
     align-items:  center;
     border-radius: 0;
-    outline: 12px dashed #202020;
+    outline: 12px dashed #191919;
     outline-offset: -6px;
     display: inline-flex;
     -webkit-user-select: none;
@@ -25,7 +25,7 @@
     user-select: none;
     box-shadow: inset 6px -6px 0px 0px rgba(0, 0, 0, 0.2);
     &.safari-fix-active {
-        outline: 30px dashed #202020;
+        outline: 30px dashed #191919;
     }
     div {
         opacity: 0;
@@ -395,8 +395,8 @@ label {
 //footer 
 section.footer {
     position: relative;
-    margin-top: -2rem;
-    margin-bottom: 2rem;
+    margin-bottom: .1rem;
+    padding-bottom: 2rem;
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -436,6 +436,7 @@ section.footer {
     padding: 1rem;
     display: flex;
     flex-direction: column;
+
     &:hover {
         .image {
             transform: scale(1.025);

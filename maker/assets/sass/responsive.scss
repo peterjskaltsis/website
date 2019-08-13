@@ -1,0 +1,79 @@
+/*
+    Teaser Responsive Styling
+*/
+
+@media (max-width: 600px) {
+    body {
+        margin-left: 0;
+    }
+    header {
+        padding: 1.5rem 0 0;
+    }
+    h1 {
+        font-size:2.2rem;
+        margin-top: 0;
+    }
+    h1 span {
+        color: $mainColor;
+        &:after {
+        display: none;
+    }}
+    main {
+        padding-top: .5rem;
+    }
+    .wrapper {
+        padding: 0 1.5rem;
+    }
+    nav {
+        ul {
+            li {
+                display:none;
+                &:last-child {
+                    display: inline-flex;
+                }     
+                span.nav-tab {
+                    display: none;
+                }
+            }
+        }
+    }
+    footer {
+        text-align: center;
+        .wrapper {
+            flex-direction: column;
+        }
+        nav {
+            margin: 0;
+            ul {
+                li {
+                    display:inline-flex !important;                
+                }
+            }
+        }
+    }
+    .form {
+        margin: 0;
+        padding: 1rem 1rem;
+        div {
+            flex-direction: column;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+    inputgroup {
+        padding-right: 0;
+    }
+    .error-list {
+        text-align: center;
+        margin-top: 1.5rem;
+        width: 100%;
+        li {
+            margin: 0;
+        }
+    }
+    li.error > div {
+        margin: 0 auto 2rem !important;
+        display: block;
+    }
+}

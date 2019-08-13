@@ -1,0 +1,70 @@
+/*
+    Teaser Responsive Styling
+*/
+@media (max-width: 600px) {
+  body {
+    margin-left: 0;
+  }
+  header {
+    padding: 1.5rem 0 0;
+  }
+  h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+  }
+  h1 span:after {
+    display: none;
+  }
+  main {
+    padding-top: .5rem;
+  }
+  .wrapper {
+    padding: 0 1.5rem;
+  }
+  nav ul li {
+    display: none;
+  }
+  nav ul li:last-child {
+    display: inline-flex;
+  }
+  nav ul li span.nav-tab {
+    display: none;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .wrapper {
+    flex-direction: column;
+  }
+  footer nav {
+    margin: 0;
+  }
+  footer nav ul li {
+    display: inline-flex !important;
+  }
+  .form {
+    margin: 0;
+    padding: 1rem 1rem;
+  }
+  .form div {
+    flex-direction: column;
+  }
+  .form .btn {
+    width: 100%;
+  }
+  inputgroup {
+    padding-right: 0;
+  }
+  .error-list {
+    text-align: center;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  .error-list li {
+    margin: 0;
+  }
+  li.error > div {
+    margin: 0 auto 2rem !important;
+    display: block;
+  }
+}
