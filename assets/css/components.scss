@@ -1,5 +1,17 @@
 //main components
 
+.tag {
+    font-size: .65rem;
+    font-family: GTWalsheimBold;
+    letter-spacing: 1px;
+    color: #c0ae8d;
+    background: #202020;
+    border: 1px solid rgba(192, 174, 141, 0.2);
+    padding: 2px 4px;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
 //brand
 .brand-img-ps {
     background: white;
@@ -387,7 +399,7 @@ label {
     -o-user-select: none;
     user-select: none;
     &.section-identifier {
-        float: right;
+        margin-left: auto;
         padding: .6rem;
     }
 }
@@ -448,6 +460,8 @@ section.footer {
     h4 {
         padding-bottom: 1rem;
         border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+            display: flex;
+    align-items: center;
     }
     p {
         font-size: 18px;
@@ -467,7 +481,7 @@ section.footer {
     }
     img {
         height: 100%;
-                filter: grayscale(90%);
+                filter: grayscale(50%);
         border-radius: 8px;
         transition: .2s ease;
     }

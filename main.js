@@ -1841,9 +1841,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.ay,
-		impl.aG,
-		impl.aE,
+		impl.az,
+		impl.aH,
+		impl.aF,
 		function() { return function() {} }
 	);
 });
@@ -3867,11 +3867,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.ay,
-		impl.aG,
-		impl.aE,
+		impl.az,
+		impl.aH,
+		impl.aF,
 		function(sendToApp, initialModel) {
-			var view = impl.aI;
+			var view = impl.aJ;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3903,12 +3903,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.ay,
-		impl.aG,
-		impl.aE,
+		impl.az,
+		impl.aH,
+		impl.aF,
 		function(sendToApp, initialModel) {
 			var divertHrefToApp = impl.A && impl.A(sendToApp)
-			var view = impl.aI;
+			var view = impl.aJ;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3916,12 +3916,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aq);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.ar);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aF) && (_VirtualDom_doc.title = title = doc.aF);
+				(title !== doc.aG) && (_VirtualDom_doc.title = title = doc.aG);
 			});
 		}
 	);
@@ -3977,8 +3977,8 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aA;
-	var onUrlRequest = impl.aB;
+	var onUrlChange = impl.aB;
+	var onUrlRequest = impl.aC;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
@@ -3998,7 +3998,7 @@ function _Browser_application(impl)
 					var next = elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ag === next.ag
+							&& curr.ah === next.ah
 							&& curr.W === next.W
 							&& curr.ad.a === next.ad.a
 						)
@@ -4008,13 +4008,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		ay: function(flags)
+		az: function(flags)
 		{
-			return A3(impl.ay, flags, _Browser_getUrl(), key);
+			return A3(impl.az, flags, _Browser_getUrl(), key);
 		},
-		aI: impl.aI,
-		aG: impl.aG,
-		aE: impl.aE
+		aJ: impl.aJ,
+		aH: impl.aH,
+		aF: impl.aF
 	});
 }
 
@@ -4080,17 +4080,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aw: 'hidden', ar: 'visibilitychange' }
+		? { ax: 'hidden', as: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aw: 'mozHidden', ar: 'mozvisibilitychange' }
+		? { ax: 'mozHidden', as: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aw: 'msHidden', ar: 'msvisibilitychange' }
+		? { ax: 'msHidden', as: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aw: 'webkitHidden', ar: 'webkitvisibilitychange' }
-		: { aw: 'hidden', ar: 'visibilitychange' };
+		? { ax: 'webkitHidden', as: 'webkitvisibilitychange' }
+		: { ax: 'hidden', as: 'visibilitychange' };
 }
 
 
@@ -4171,8 +4171,8 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		ak: _Browser_getScene(),
-		an: {
+		al: _Browser_getScene(),
+		ao: {
 			G: _Browser_window.pageXOffset,
 			H: _Browser_window.pageYOffset,
 			x: _Browser_doc.documentElement.clientWidth,
@@ -4210,11 +4210,11 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			ak: {
+			al: {
 				x: node.scrollWidth,
 				s: node.scrollHeight
 			},
-			an: {
+			ao: {
 				G: node.scrollLeft,
 				H: node.scrollTop,
 				x: node.clientWidth,
@@ -4248,14 +4248,14 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			ak: _Browser_getScene(),
-			an: {
+			al: _Browser_getScene(),
+			ao: {
 				G: x,
 				H: y,
 				x: _Browser_doc.documentElement.clientWidth,
 				s: _Browser_doc.documentElement.clientHeight
 			},
-			as: {
+			at: {
 				G: x + rect.left,
 				H: y + rect.top,
 				x: rect.width,
@@ -4296,7 +4296,7 @@ function _Browser_load(url)
 }
 var author$project$Main$Contact = F3(
 	function (name, email, note) {
-		return {at: email, J: name, az: note};
+		return {au: email, J: name, aA: note};
 	});
 var elm$core$Basics$EQ = 1;
 var elm$core$Basics$LT = 0;
@@ -5273,23 +5273,25 @@ var author$project$Main$strong = function (word) {
 				elm$html$Html$text(word)
 			]));
 };
-var author$project$Main$Project = F4(
-	function (name, description, image, link) {
-		return {S: description, X: image, Z: link, J: name};
+var author$project$Main$Project = F5(
+	function (name, description, image, link, projectType) {
+		return {S: description, X: image, Z: link, J: name, ag: projectType};
 	});
 var author$project$Main$listProjects = _List_fromArray(
 	[
-		A4(author$project$Main$Project, 'MadBlock', 'Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch.', 'assets/img/madblock-final.jpg', 'assets/img/madblock-final.jpg'),
-		A4(author$project$Main$Project, 'Bibelo Gifts', 'Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme.', 'assets/img/bibelo-front.png', 'https://bibelo.com.au'),
-		A4(author$project$Main$Project, 'Three Sisters', 'After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business.', 'assets/img/3sisters.png', 'https://threesisterscatering.com.au/'),
-		A4(author$project$Main$Project, 'Beek', 'A powerful, simple app to manage your business and change the way you send and receive payments. More information will be available soon, this is the highest priority project.', 'assets/img/beek-website.png', 'https://beek.com.au/'),
-		A4(author$project$Main$Project, 'Maker Army', 'Coined via a collaboration between a small team of remote developers, Maker Army is a platform built for makers to earn money from supporters, to create greater quality content and better whole creative community.', 'assets/img/makerarmy.png', '/maker'),
-		A4(author$project$Main$Project, 'Vivid Fund/Agency', 'A private agency and fund that I founded, in order to formalise website development projects and experiment with exciting, further-reaching projects.', 'assets/img/vivid.png', 'https://vivid.fund'),
-		A4(author$project$Main$Project, 'Branding Portfolio', 'Branding & design were a highlight of my degree. I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. Let me know if you\'re interested in seeing my portfolio. ', 'assets/img/branding-front.png', 'https://peter-s-nsw.peter-s1.now.sh/')
+		A5(author$project$Main$Project, 'MadBlock', 'Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch.', 'assets/img/madblock-final.jpg', 'assets/img/madblock-final.jpg', 'WEBSITE'),
+		A5(author$project$Main$Project, 'Bibelo Gifts', 'Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme.', 'assets/img/bibelo-front.png', 'https://bibelo.com.au/', 'WEBSITE'),
+		A5(author$project$Main$Project, 'Three Sisters', 'After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business.', 'assets/img/3sisters.png', 'https://threesisterscatering.com.au/', 'WEBSITE'),
+		A5(author$project$Main$Project, 'Beek', 'A powerful, simple app to manage your business and change the way you send and receive payments. More information will be available soon, this is the highest priority project.', 'assets/img/beek-website.png', 'https://beek.com.au/', 'APP'),
+		A5(author$project$Main$Project, 'Maker Army', 'Coined via a collaboration between a small team of remote developers, Maker Army is a platform built for makers to earn money from supporters, to create greater quality content and better whole creative community.', 'assets/img/makerarmy.png', '/maker', 'APP'),
+		A5(author$project$Main$Project, 'Carb CSS', 'This project was inspired by my use of Elm & Elixir in a majority of recent web projects, both of which have ditched the \"{;}\" syntax - so I thought it was about time to bring CSS up to scratch.', 'assets/img/carb-website.png', 'https://carb.now.sh/', 'OPEN SOURCE'),
+		A5(author$project$Main$Project, 'Vivid Fund/Agency', 'A private agency and fund that I founded, in order to formalise website development projects and experiment with exciting, further-reaching projects.', 'assets/img/vivid.png', 'https://vivid.fund/', 'BUSINESS'),
+		A5(author$project$Main$Project, 'Branding Portfolio', 'Branding & design were a highlight of my degree. I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. Let me know if you\'re interested in seeing my portfolio.', 'assets/img/branding-front.png', 'https://peter-s-nsw.peter-s1.now.sh/', 'PERSONAL')
 	]);
 var elm$html$Html$h4 = _VirtualDom_node('h4');
 var elm$html$Html$h5 = _VirtualDom_node('h5');
 var elm$html$Html$img = _VirtualDom_node('img');
+var elm$html$Html$Attributes$alt = elm$html$Html$Attributes$stringProperty('alt');
 var elm$html$Html$Attributes$draggable = _VirtualDom_attribute('draggable');
 var elm$html$Html$Attributes$src = function (url) {
 	return A2(
@@ -5302,6 +5304,7 @@ var author$project$Main$viewPortfolioItem = function (_n0) {
 	var description = _n0.S;
 	var image = _n0.X;
 	var link = _n0.Z;
+	var projectType = _n0.ag;
 	var isLink = function (url) {
 		return (url === '') ? _List_fromArray(
 			[
@@ -5342,7 +5345,8 @@ var author$project$Main$viewPortfolioItem = function (_n0) {
 						_List_fromArray(
 							[
 								elm$html$Html$Attributes$draggable('false'),
-								elm$html$Html$Attributes$src(image)
+								elm$html$Html$Attributes$src(image),
+								elm$html$Html$Attributes$alt(name)
 							]),
 						_List_Nil)
 					])),
@@ -5351,7 +5355,17 @@ var author$project$Main$viewPortfolioItem = function (_n0) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						elm$html$Html$text(name)
+						elm$html$Html$text(name),
+						A2(
+						elm$html$Html$small,
+						_List_fromArray(
+							[
+								author$project$Main$class('tag')
+							]),
+						_List_fromArray(
+							[
+								elm$html$Html$text(projectType)
+							]))
 					])),
 				A2(
 				elm$html$Html$p,
@@ -5458,7 +5472,11 @@ var author$project$Main$viewPortfolioSection = A2(
 				[
 					A2(
 					elm$html$Html$h1,
-					_List_Nil,
+					_List_fromArray(
+						[
+							A2(elm$html$Html$Attributes$style, 'alignItems', 'center'),
+							A2(elm$html$Html$Attributes$style, 'display', 'flex')
+						]),
 					_List_fromArray(
 						[
 							elm$html$Html$text('Previous work'),
@@ -5602,14 +5620,14 @@ var author$project$Main$page = function (model) {
 };
 var author$project$Main$view = function (model) {
 	return {
-		aq: _Utils_ap(
+		ar: _Utils_ap(
 			_List_fromArray(
 				[author$project$Main$githubLink]),
 			_List_fromArray(
 				[
 					author$project$Main$page(model)
 				])),
-		aF: 'Peter S: Simplify & Unify'
+		aG: 'Peter S: Simplify & Unify'
 	};
 };
 var elm$browser$Browser$External = function (a) {
@@ -5728,7 +5746,7 @@ var elm$core$String$contains = _String_contains;
 var elm$core$String$toInt = _String_toInt;
 var elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {V: fragment, W: host, ab: path, ad: port_, ag: protocol, ah: query};
+		return {V: fragment, W: host, ab: path, ad: port_, ah: protocol, ai: query};
 	});
 var elm$url$Url$chompBeforePath = F5(
 	function (protocol, path, params, frag, str) {
@@ -5834,6 +5852,6 @@ var elm$url$Url$fromString = function (str) {
 };
 var elm$browser$Browser$document = _Browser_document;
 var author$project$Main$main = elm$browser$Browser$document(
-	{ay: author$project$Main$init, aE: author$project$Main$subscriptions, aG: author$project$Main$update, aI: author$project$Main$view});
+	{az: author$project$Main$init, aF: author$project$Main$subscriptions, aH: author$project$Main$update, aJ: author$project$Main$view});
 _Platform_export({'Main':{'init':author$project$Main$main(
 	elm$json$Json$Decode$succeed(0))(0)}});}(this));

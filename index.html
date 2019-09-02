@@ -1,13 +1,13 @@
 <!doctype html>
-<!-- mady by Peter S. - updated 8.2019 -->
+<!-- mady by Peter S. - updated 09.2019 -->
 <!-- The contents of this website are protected by Copyright law © Please ask me before taking the site 😇 -->
 <!-- Written in Elm ;) -->
-<html>
+<html lang="en">
 
 <head>
     <title>Peter S: Simplify & Unify</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0">
     <link rel="stylesheet" href="assets/css/main.css">
     <meta name="theme-color" content="#121212">
     <meta name="mobile-web-app-capable" content="yes">
@@ -45,14 +45,16 @@
 
 <body class="" id="body">
     <div id="app"></div>
+    <noscript>What!? Please install Javascript to floppy disk drive #2.</noscript>
     <script>
+        // Elm website initialisation
         Elm.Main.init({ node: document.getElementById("app") });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="assets/js/jquery.chaffle.min.js"></script>
     <script>
-
+        // Cheeky JQuery
         $(".nav-trigger").click(function () {
             $(".nav-trigger").toggleClass("icon-active");
             $(".dropdown").toggleClass("open");
@@ -68,6 +70,8 @@
                 time: 60
             });
         });
+
+        // Even cheekier fix for that weird moon...
         var userAgent = navigator.userAgent.toLowerCase();
         if (userAgent.indexOf('safari') != -1) {
             if (userAgent.indexOf('chrome') > -1) {

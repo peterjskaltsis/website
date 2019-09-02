@@ -1,16 +1,19 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'GTWalsheimBold';
+  font-display: auto;
   src: url("../fonts/GT-Walsheim-Bold.ttf");
 }
 
 @font-face {
   font-family: 'GTWalsheimMedium';
+  font-display: auto;
   src: url("../fonts/GT-Walsheim-Medium.ttf");
 }
 
 @font-face {
   font-family: 'GTWalsheimRegular';
+  font-display: auto;
   src: url("../fonts/GT-Walsheim-Regular.ttf");
 }
 
@@ -132,6 +135,18 @@ section {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+.tag {
+    font-size: .65rem;
+    font-family: GTWalsheimBold;
+    letter-spacing: 1px;
+    color: #c0ae8d;
+    background: #202020;
+    border: 1px solid rgba(192, 174, 141, 0.2);
+    padding: 2px 4px;
+    border-radius: 5px;
+    margin-left: auto;
 }
 
 .brand-img-ps {
@@ -560,7 +575,7 @@ label {
 }
 
 label.section-identifier {
-  float: right;
+  margin-left: auto;
   padding: .6rem;
 }
 
@@ -620,6 +635,9 @@ section.footer .nav li a:hover {
 .item h4 {
   padding-bottom: 1rem;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+
+      display: flex;
+    align-items: center;
 }
 
 .item p {
@@ -642,7 +660,7 @@ section.footer .nav li a:hover {
 
 .item img {
   height: 100%;
-  filter: grayscale(90%);
+  filter: grayscale(50%);
   border-radius: 8px;
   transition: .2s ease;
 }
@@ -662,6 +680,11 @@ body.🔆 h1, body.🔆 h2, body.🔆 h3, body.🔆 h4, body.🔆 h5, body.🔆 
   color: #232323;
 }
 
+
+body.🔆 a, body.🔆 a:link, body.🔆 a:active, body.🔆 a:visited {
+  color: #232323;
+}
+
 body.🔆 ul.nav li a {
   color: #232323;
 }
@@ -672,6 +695,12 @@ body.🔆 ul.nav li a:after {
 
 body.🔆 ul.nav li a:hover:after {
   border-bottom: 2px dotted wheat;
+}
+
+body.🔆 .tag {
+    background: #f9f9f9;
+    color: #818181;
+    border-color: #e2e2e2;
 }
 
 body.🔆 .brand-img-ps {
