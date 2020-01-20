@@ -45,7 +45,7 @@ listProjects =
     , Project "Carb CSS" "This project was inspired by my use of Elm & Elixir in a majority of recent web projects, both of which have ditched the \"{;}\" syntax - so I thought it was about time to bring CSS up to scratch." "assets/img/carb-website.png" "https://carb.now.sh/" "OPEN SOURCE"
     , Project "Vivid Fund/Agency" "A private agency and fund that I founded, in order to formalise website development projects and experiment with exciting, further-reaching projects." "assets/img/vivid.png" "https://vivid.fund/" "BUSINESS"
     , Project "Branding Portfolio" "Branding & design were a highlight of my degree. I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. Let me know if you're interested in seeing my portfolio." "assets/img/branding-front.png" "https://peter-s-nsw.peter-s1.now.sh/" "PERSONAL"
-    , Project "Melb. Test and Tagging" "Melbourne Test and Tagging is a local business in Melbourne, Australia. After an initial consultation, I built the business a NextJS React website, styled with TailwindCSS and hosted with Now by Zeit for free." "assets/img/mtt.png" "https://melbournetestandtagging.net.au/" "WEBSITE/SEO"
+    , Project "Melb Test & Tagging" "Melbourne Test and Tagging is a local business in Melbourne, Australia. After an initial consultation, I built the business a NextJS React website, styled with TailwindCSS and hosted with Now by Zeit for free." "assets/img/mtt.png" "https://melbournetestandtagging.net.au/" "WEBSITE/SEO"
     ]
 
 
