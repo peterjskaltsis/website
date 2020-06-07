@@ -1,4 +1,4 @@
-assets/
-maker/
+assets/* linguist-vendored
+maker/* linguist-vendored
 
-main.js
+main.js linguist-vendored
