@@ -1,23 +1,25 @@
 // personal website styling 🖌 (main)
 // By Peter S. (https://xenius.design) - 2018
 
-@import "config";
+@import "config.scss";
 
 @font-face {
     font-family: 'GTWalsheimBold';
     font-display: auto;
     src: url('../fonts/GT-Walsheim-Bold.ttf');
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: 'GTWalsheimMedium';
     font-display: auto;
     src: url('../fonts/GT-Walsheim-Medium.ttf');
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: 'GTWalsheimRegular';
     font-display: auto;
     src: url('../fonts/GT-Walsheim-Regular.ttf');
-  }
+}
 
 html {
     background-color: $mainColor;
@@ -27,6 +29,7 @@ html {
     font-display: initial;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -42,12 +45,13 @@ body {
     letter-spacing: .5px;
     background-color: #191919; // #202020
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233c3c3c' fill-opacity='0.16'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
 }
 
 * {
     box-sizing: border-box;
-    transition: background .2s ease-in-out;
-    -webkit-transition:  0.2s ease background;
+    transition: .2s ease-in-out;
+    -webkit-transition: 0.2s ease;
 }
 
 p {
@@ -59,12 +63,20 @@ p {
     user-select: text;
 }
 
-a, a:link, a:active, a:visited {
+a,
+a:link,
+a:active,
+a:visited {
     color: white;
     text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $wowFont;
     letter-spacing: .5px;
     margin: 1rem 0;
@@ -80,22 +92,27 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 40px;
 }
+
 h2 {
     font-size: 32px;
 }
-h1, h2 {
+
+h1,
+h2 {
     color: $mainColor;
 }
 
 h3 {
     font-size: 24px;
 }
+
 h4 {
     font-size: 20px;
     font-family: GTWalsheimMedium, sans-serif;
 }
 
-.button, a.button {
+.button,
+a.button {
     color: white;
     font-family: $wowFont;
     font-size: 14px;
@@ -112,14 +129,15 @@ h4 {
 }
 
 
-.button:focus, .button:active {
+.button:focus,
+.button:active {
     transform: translateY(2px);
 }
 
 .wrapper-inner {
     max-width: $responsiveWide;
     padding: 0 2.6rem;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
 section {
@@ -132,7 +150,6 @@ section {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin: 0 -1rem;
-
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -140,6 +157,6 @@ section {
     user-select: none;
 }
 
-@import "components";
-@import "light-theme";
-@import "responsive";
+@import "components.scss";
+@import "light-theme.scss";
+@import "responsive.scss";
