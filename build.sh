@@ -17,7 +17,7 @@ elm make $elm --optimize --output=$js
 
 # Optimise elm code.
 echo $module "optimising $color_cyan$js$color_reset to $color_cyan$min$color_reset ..."
-npm run uglifyjs $js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | uglifyjs --mangle --output=$min
+npm run uglify $js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | uglifyjs --mangle --output=$min
 
 # Success!
 echo $module "compression stats:"
