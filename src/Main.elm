@@ -3,11 +3,11 @@ module Main exposing (main)
 import Browser exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events as Events
 import Svg exposing (svg)
 import Svg.Attributes exposing (class, d, fill, height, viewBox)
 
 
+class : String -> Attribute msg
 class =
     -- svg & html attribute clash fix
     Html.Attributes.class
@@ -36,16 +36,19 @@ type alias Project =
     }
 
 
+listProjects : List Project
 listProjects =
-    [ Project "MadBlock" "Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch." "assets/img/madblock-final.jpg" "assets/img/madblock-final.jpg" "WEBSITE"
+    [ Project "Open Day" "Open Day is a web app/site written in NodeJS, NextJS and React for a project subject at university. I worked with a team of 3, where I managed the Github repo, designed the architecture and frontend, and helped others learn web app dev." "assets/img/open-day.png" "https://open-day-spindle.herokuapp.com/" "UNIVERSITY"
+    , Project "MadBlock" "Consulting with the MadBlock team remotely, I worked to devise and develop an entire Xenforo 2 theme and framework, from scratch." "assets/img/madblock-final.jpg" "assets/img/madblock-final.jpg" "WEBSITE"
+    , Project "Beek" "A powerful, simple app to manage your business and change the way you send and receive payments. More information will be available soon, this is the highest priority project." "assets/img/beek-website.png" "https://beek.com.au/" "APP"
+    , Project "Banking Hackathon" "In 2020, I teamed up with 3 other students from other universities to create a DeFi fintech application at the Accenture hackathon. It was a high return rate account that utilises crypto lending platforms, all contained with a NextJS frontend." "assets/img/defi.gif" "https://defi-bank.now.sh/" "FINTECH"
     , Project "Bibelo Gifts" "Through in-person consultations with Bibelo, we successfully moved the once brick & mortar store to a new online Shopify store, equipped with a custom theme." "assets/img/bibelo-front.png" "https://bibelo.com.au/" "WEBSITE"
     , Project "Three Sisters" "After a number of in-person meetings with the owners of Three Sisters, a multi-paged, elegant website was created to represent the new, high quality catering business." "assets/img/3sisters.png" "https://threesisterscatering.com.au/" "WEBSITE/SEO"
-    , Project "Beek" "A powerful, simple app to manage your business and change the way you send and receive payments. More information will be available soon, this is the highest priority project." "assets/img/beek-website.png" "https://beek.com.au/" "APP"
     , Project "Maker Army" "Coined via a collaboration between a small team of remote developers, Maker Army is a platform built for makers to earn money from supporters, to create greater quality content and better whole creative community." "assets/img/makerarmy.png" "/maker" "APP"
     , Project "Carb CSS" "This project was inspired by my use of Elm & Elixir in a majority of recent web projects, both of which have ditched the \"{;}\" syntax - so I thought it was about time to bring CSS up to scratch." "assets/img/carb-website.png" "https://carb.now.sh/" "OPEN SOURCE"
     , Project "Vivid Fund/Agency" "A private agency and fund that I founded, in order to formalise website development projects and experiment with exciting, further-reaching projects." "assets/img/vivid.png" "https://vivid.fund/" "BUSINESS"
-    , Project "Branding Portfolio" "Branding & design were a highlight of my degree. I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. Let me know if you're interested in seeing my portfolio." "assets/img/branding-front.png" "https://peter-s-nsw.peter-s1.now.sh/" "PERSONAL"
     , Project "Melb Test & Tagging" "Melbourne Test and Tagging is a local business in Melbourne, Australia. After an initial consultation, I built the business a NextJS React website, styled with TailwindCSS and hosted with Now by Zeit for free." "assets/img/mtt.png" "https://melbournetestandtagging.net.au/" "WEBSITE/SEO"
+    , Project "Branding Portfolio" "Branding & design were a highlight of my degree. I had to opportunity to rebrand globally known companies and work with leaders of global design agencies. Let me know if you're interested in seeing my portfolio." "assets/img/branding-front.png" "https://peter-s-nsw.peter-s1.now.sh/" "PERSONAL"
     ]
 
 
@@ -61,6 +64,7 @@ type Msg
     | NewClient Contact
 
 
+main : Program () Model Msg
 main =
     Browser.document
         { init = init
@@ -70,6 +74,7 @@ main =
         }
 
 
+initialModel : Model
 initialModel =
     { projects = []
     , newclient = Contact "" "" ""
@@ -103,6 +108,7 @@ view model =
     }
 
 
+page : Model -> Html Msg
 page model =
     -- general website layout
     div [ class "container" ]
@@ -134,13 +140,14 @@ page model =
         , viewPortfolioSection
         , section [ style "marginBottom" "3rem" ]
             [ div [ class "wrapper-inner", style "textAlign" "center" ]
-                [ label [ style "textTransform" "unset" ] [ text "Site powered by ", a [ href "https://now.sh", target "_blank" ] [ text "now.sh" ], text ". ", text "Written in ", a [ href "https://elm-lang.org", target "_blank" ] [ text "Elm" ], text "." ]
+                [ label [ style "textTransform" "unset" ] [ text "Site powered by ", a [ href "https://vercel.com", target "_blank" ] [ text "vercel.com" ], text ". ", text "Written in ", a [ href "https://elm-lang.org", target "_blank" ] [ text "Elm" ], text "." ]
                 ]
             ]
         , sectionFooter
         ]
 
 
+contactCard : Model -> Html Msg
 contactCard model =
     section [ class "notices" ]
         [ div [ class "wrapper-inner" ]
@@ -161,13 +168,15 @@ tinyStyle =
     style "marginLeft" "1rem"
 
 
+strong : String -> Html Msg
 strong word =
     span [ class "strong" ] [ text word ]
 
 
+githubLink : Html Msg
 githubLink =
     -- floating github link
-    a [ href "https://github.com/p-skal", target "_blank", class "github-corner", attribute "aria-label" "Check out my GitHub" ]
+    a [ href "https://github.com/peterjskaltsis", target "_blank", class "github-corner", attribute "aria-label" "Check out my GitHub" ]
         [ svg [ Svg.Attributes.width "80", Svg.Attributes.height "80", Svg.Attributes.viewBox "0 0 250 250", Svg.Attributes.style "fill: #f5deb3;color: #151513;position: absolute;top: 0;border: 0;right: 0;" ]
             [ Svg.path [ d "M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" ]
                 []
@@ -179,22 +188,27 @@ githubLink =
         ]
 
 
-primaryButton =
-    -- primary button layout
-    let
-        path =
-            "#"
-    in
-    a
-        [ class "button button-primary"
-        , href path
-        ]
-        [ text "Hi, Peter.." ]
+
+{-
+   primaryButton =
+       -- primary button layout
+       let
+           path =
+               "#"
+       in
+       a
+           [ class "button button-primary"
+           , href path
+           ]
+           [ text "Hi, Peter.." ]
+-}
 
 
+viewPortfolioSection : Html Msg
 viewPortfolioSection =
     section [ class "recents" ]
-        [ div [ class "wrapper-inner" ]
+        [ a [ id "portfolio" ] []
+        , div [ class "wrapper-inner" ]
             [ h1 [ style "alignItems" "center", style "display" "flex" ]
                 [ text "Previous work"
                 , label [ class "section-identifier" ] [ text "Starred ", i [ class "fas fa-star" ] [] ]
@@ -220,7 +234,7 @@ viewPortfolioItem { name, description, image, link, projectType } =
     in
     -- Recent work items
     div [ class "item" ]
-        [ a ([ class "image" ] ++ projectLink)
+        [ a (class "image" :: projectLink)
             [ if image == "" then
                 h5 [] [ text "Coming Soon" ]
 
@@ -235,6 +249,7 @@ viewPortfolioItem { name, description, image, link, projectType } =
         ]
 
 
+sectionNav : Html Msg
 sectionNav =
     section
         [ class "navigation-bar" ]
@@ -245,7 +260,7 @@ sectionNav =
                     ]
                 ]
             , ul [ class "nav nav-right" ]
-                [ li [] [ a [ class "" ] [ text "Work" ] ]
+                [ li [] [ a [ class "", href "#portfolio" ] [ text "Work" ] ]
                 , li [] [ a [ class "" ] [ text "Play" ] ]
                 , li [] [ a [ class "" ] [ text "Need a hand?" ] ]
                 ]
@@ -261,17 +276,19 @@ sectionNav =
         ]
 
 
+sectionFooter : Html Msg
 sectionFooter =
     section [ class "footer" ]
         [ div [ class "wrapper-inner" ]
             [ ul [ class "nav" ]
-                [ li [] [ a [ href "https://twitter.com/ps300300", target "_blank" ] [ i [ class "fab fa-twitter" ] [] ] ]
+                [ li [] [ a [ href "https://twitter.com/peterjskaltsis", target "_blank" ] [ i [ class "fab fa-twitter" ] [] ] ]
                 , li [] [ a [ href "https://medium.com/@p.skal", target "_blank" ] [ i [ class "fab fa-medium-m" ] [] ] ]
-                , li [] [ a [ href "https://linkedin.com/in/peter-skaltsis-1a05b3111", target "_blank" ] [ i [ class "fab fa-linkedin" ] [] ] ]
+                , li [] [ a [ href "https://linkedin.com/in/peter-skaltsis", target "_blank" ] [ i [ class "fab fa-linkedin" ] [] ] ]
                 ]
             ]
         ]
 
 
+site_title : String
 site_title =
     "Peter S: Simplify & Unify"

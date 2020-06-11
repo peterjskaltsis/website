@@ -25,6 +25,7 @@ html {
   font-display: initial;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -44,8 +45,8 @@ body {
 
 * {
   box-sizing: border-box;
-  transition: background .2s ease-in-out;
-  -webkit-transition: 0.2s ease background;
+  transition: .2s ease-in-out;
+  -webkit-transition: 0.2s ease;
 }
 
 p {
@@ -57,12 +58,20 @@ p {
   user-select: text;
 }
 
-a, a:link, a:active, a:visited {
+a,
+a:link,
+a:active,
+a:visited {
   color: white;
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "GTWalsheimBold", sans-serif;
   letter-spacing: .5px;
   margin: 1rem 0;
@@ -82,7 +91,8 @@ h2 {
   font-size: 32px;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: wheat;
 }
 
@@ -95,7 +105,8 @@ h4 {
   font-family: GTWalsheimMedium, sans-serif;
 }
 
-.button, a.button {
+.button,
+a.button {
   color: white;
   font-family: "GTWalsheimBold", sans-serif;
   font-size: 14px;
@@ -111,7 +122,8 @@ h4 {
   text-align: center;
 }
 
-.button:focus, .button:active {
+.button:focus,
+.button:active {
   transform: translateY(2px);
 }
 
@@ -138,15 +150,15 @@ section {
 }
 
 .tag {
-    font-size: .65rem;
-    font-family: GTWalsheimBold;
-    letter-spacing: 1px;
-    color: #c0ae8d;
-    background: #202020;
-    border: 1px solid rgba(192, 174, 141, 0.2);
-    padding: 2px 4px;
-    border-radius: 5px;
-    margin-left: auto;
+  font-size: .65rem;
+  font-family: GTWalsheimBold;
+  letter-spacing: 1px;
+  color: #c0ae8d;
+  background: #202020;
+  border: 1px solid rgba(192, 174, 141, 0.2);
+  padding: 2px 4px;
+  border-radius: 5px;
+  margin-left: auto;
 }
 
 .brand-img-ps {
@@ -635,9 +647,8 @@ section.footer .nav li a:hover {
 .item h4 {
   padding-bottom: 1rem;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-
-      display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .item p {
@@ -680,7 +691,6 @@ body.🔆 h1, body.🔆 h2, body.🔆 h3, body.🔆 h4, body.🔆 h5, body.🔆 
   color: #232323;
 }
 
-
 body.🔆 a, body.🔆 a:link, body.🔆 a:active, body.🔆 a:visited {
   color: #232323;
 }
@@ -698,9 +708,9 @@ body.🔆 ul.nav li a:hover:after {
 }
 
 body.🔆 .tag {
-    background: #f9f9f9;
-    color: #818181;
-    border-color: #e2e2e2;
+  background: #f9f9f9;
+  color: #818181;
+  border-color: #e2e2e2;
 }
 
 body.🔆 .brand-img-ps {

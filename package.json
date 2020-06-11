@@ -1,0 +1,24 @@
+{
+  "name": "peter-website",
+  "version": "1.0.0",
+  "description": "The source code for my website.",
+  "main": "main.js",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterjskaltsis/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterjskaltsis/website/issues"
+  },
+  "homepage": "https://github.com/peterjskaltsis/website#readme",
+  "dependencies": {
+    "elm": "^0.19.1-3",
+    "rimraf": "^3.0.2",
+    "uglifyjs": "^2.4.11"
+  }
+}
