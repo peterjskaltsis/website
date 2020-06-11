@@ -4,8 +4,7 @@
   "description": "The source code for my website.",
   "main": "main.js",
   "scripts": {
-    "build": "./build.sh",
-    "uglify": "uglifyjs"
+    "build": "./build.sh"
   },
   "repository": {
     "type": "git",
